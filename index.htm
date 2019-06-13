@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <title>File Uploading Form</title>
+</head>
+
 <body>
-    <form action="http://127.0.0.1:8081/process-post" method="POST">
-        <table>
-            <tbody>
-                <tr>
-                    <td><label for="ln">First Name: </label></td>
-                    <td><input id="fn" type="text" name="first_name"></td>
-                </tr>
-                <tr>
-                    <td><label for="ln">Last Name: </label></td>
-                    <td><input id="ln" type="text" name="last_name"></td>
-                </tr>
-                <tr>
-                    <td colspan=2><input type="submit" value="Submit"></td>
-                </tr>
-            </tbody>
-        </table>
+    <h3>File Upload</h3>
+    Select file to upload:<br>
+    <form action="http://127.0.0.1:8081/file-upload" method="POST" enctype="multipart/form-data">
+        <!--File size in bytes. Can also specify acceptable file type using accept attribute.-->
+        <input type="file" name="file"><br>
+        <input type="submit" value="Upload File">
     </form>
 </body>
 
