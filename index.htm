@@ -2,10 +2,22 @@
 <html>
 
 <body>
-    <form action="http://127.0.0.1:8081/process-get" method="GET">
-        <label for="ln">First Name: </label><input id="fn" type="text" name="first_name"><br>
-        <label for="ln">Last Name: </label><input id="ln" type="text" name="last_name"><br>
-        <input type="submit" value="Submit">
+    <form action="http://127.0.0.1:8081/process-post" method="POST">
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="ln">First Name: </label></td>
+                    <td><input id="fn" type="text" name="first_name"></td>
+                </tr>
+                <tr>
+                    <td><label for="ln">Last Name: </label></td>
+                    <td><input id="ln" type="text" name="last_name"></td>
+                </tr>
+                <tr>
+                    <td colspan=2><input type="submit" value="Submit"></td>
+                </tr>
+            </tbody>
+        </table>
     </form>
 </body>
 
