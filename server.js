@@ -3,9 +3,20 @@ const app = express();
 
 app.use(express.static('public'));
 
-// Responds with 'Hello World' on the homepage.
+// Displays index.htm file on first link.
 app.get('/', function(req, res) {
-    res.send('Hello World');
+    res.sendFile(__dirname + '/index.htm');
+});
+
+// Responds to the action event thrown by form inside index.htm.
+app.get('/process-get', function(req, res) {
+    // Prepare output in JSON format.
+    response = {
+        first_name : req.query.first_name,
+        last_name : req.query.last_name
+    };
+    console.log(response);
+    res.end(JSON.stringify(response));
 });
 
 const server = app.listen(8081, '127.0.0.1', function() {
